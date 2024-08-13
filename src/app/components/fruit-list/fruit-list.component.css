@@ -1,0 +1,48 @@
+.fruit-list__items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.fruit-list__item {
+  background: aqua;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  padding: 2px 0;
+  margin: 5px 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  user-select: none;
+  touch-action: none;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  -webkit-user-drag: none;
+}
+
+.fruit-list__name {
+  margin: 0;
+}
+
+.fa-grip {
+  padding: 5px 5px;
+  cursor: move;
+}
+
+img {
+  user-select: none;
+}
+
+.fruit-list__item.draggable-item {
+  box-shadow: 0px 0px 5px 1px rgba(34, 60, 80, 0.68);
+  cursor: move;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.dragging {
+  opacity: 0.2;
+}

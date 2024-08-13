@@ -1,0 +1,12 @@
+<div class="main">
+  <h1 class="fruit-list__title">Список фруктов</h1>
+  <div
+    class="fruit-list__items" appSortableList (sort)="sort($event)">
+    @for (fruit of fruits; track fruit) {
+      <div class="fruit-list__item" appSortableItem>
+        <i class="fa-solid fa-grip"></i>
+        <p class="fruit-list__name">{{ fruit.name }}</p>
+      </div>
+    }
+  </div>
+</div>
