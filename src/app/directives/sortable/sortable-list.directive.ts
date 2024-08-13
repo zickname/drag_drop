@@ -20,6 +20,7 @@ export class SortableListDirective implements AfterContentInit {
       });
       item.dragMove.subscribe(event => this.onSortChange(item, event));
     });
+
     this.itemElements = this.items.map(item => item.element.nativeElement);
   }
 

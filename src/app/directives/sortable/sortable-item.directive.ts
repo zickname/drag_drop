@@ -81,6 +81,8 @@ export class SortableItemDirective {
       const rect = this.adjustedRectWithMargins!;
 
       this.clone = this.element.nativeElement.cloneNode(true) as HTMLElement;
+      this.clone.classList.add('draggable-item');
+
       Object.assign(this.clone.style, {
         position: 'absolute',
         zIndex: '1000',
@@ -89,7 +91,6 @@ export class SortableItemDirective {
         transform: `translate(${rect.left + window.scrollX}px, ${rect.top + window.scrollY}px)`,
         width: `${rect.width}px`,
       });
-      this.clone.classList.add('draggable-item');
 
       document.body.appendChild(this.clone);
     }
@@ -126,7 +127,7 @@ export class SortableItemDirective {
     event.preventDefault();
 
     const currentPosition = this.calculateClonePosition(event);
-    console.log(currentPosition)
+
     this.clone.style.transform = `translate(${currentPosition.left + window.scrollX}px, ${currentPosition.top + window.scrollY}px)`;
     this.dragMove.emit(currentPosition);
   };
