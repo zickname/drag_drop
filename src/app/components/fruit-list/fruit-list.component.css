@@ -1,7 +1,6 @@
 .fruit-list__items {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .fruit-list__item {
